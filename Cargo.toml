@@ -5,6 +5,7 @@ edition = "2021"
 authors = ["chanmaoganda <avaniawang@outlook.com>"]
 description = "A Rust library for parsing TDX files"
 license = "GPL-3.0"
+repository = "https://github.com/chanmaoganda/TdxDumpCore"
 
 
 [dependencies]
