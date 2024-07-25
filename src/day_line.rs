@@ -45,7 +45,7 @@ impl DayLine {
     }
 }
 
-#[cfg(feature = "raw")]
+#[cfg(not(feature = "macd"))]
 impl DayLine {
     pub fn new(path: impl AsRef<Path>) -> Self {
         let bytes = std::fs::read(path).unwrap();
