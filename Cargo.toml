@@ -1,0 +1,16 @@
+[package]
+name = "tdx_dump_core"
+version = "0.1.0"
+edition = "2021"
+authors = ["chanmaoganda <avaniawang@outlook.com>"]
+description = "A Rust library for parsing TDX files"
+license = "GPL-3.0"
+
+
+[dependencies]
+serde = { version = "^1.0", features = ["derive"] }
+ta = { version = "0.5.0", optional = true }
+
+[features]
+default = []
+macd = ["dep:ta"]
