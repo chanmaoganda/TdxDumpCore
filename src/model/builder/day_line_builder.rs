@@ -46,22 +46,12 @@ impl DayLineBuilder {
             let daily_data = DailyData::new(date, open, high, low, close, turnover, volume);
             day_line.push(daily_data);
         }
+
         Ok(DayLine::new(day_line))
     }
 
 }
 
-#[test]
-fn test() -> anyhow::Result<()> {
-    let mut buf = vec![];
-    let mut file = File::open("../shlday/sh000001.day")?;
-    file.seek(std::io::SeekFrom::End(-8))?;
-    // let mut buffer = vec![];
-    // file.read_to_end(&mut buffer)?;
-    file.read_to_end(&mut buf)?;
-    dbg!(buf);
-    Ok(())
-}
 
 #[test]
 fn builder_test() -> anyhow::Result<()> {
