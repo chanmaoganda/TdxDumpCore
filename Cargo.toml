@@ -1,6 +1,6 @@
 [package]
 name = "tdx_dump_core"
-version = "0.2.2"
+version = "0.2.3"
 edition = "2021"
 authors = ["chanmaoganda <avaniawang@outlook.com>"]
 description = "A Rust library for parsing TDX files"
