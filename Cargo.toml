@@ -11,10 +11,12 @@ repository = "https://github.com/chanmaoganda/TdxDumpCore"
 [dependencies]
 anyhow = "1.0.89"
 byteorder = "1.5.0"
-# iter_tools = "0.21.0"
 serde = { version = "^1.0", features = ["derive"] }
+# iter_tools = "0.21.0"
 # ta = { version = "0.5.0", optional = true }
 
 [features]
 default = []
 # macd = ["dep:ta"]
+macd = []
+origin_data = []
