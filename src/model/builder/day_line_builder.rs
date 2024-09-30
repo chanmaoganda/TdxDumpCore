@@ -15,7 +15,7 @@ pub struct DayLineBuilder {
 impl DayLineBuilder {
     pub fn from_path<P: AsRef<Path>>(path: P) -> anyhow::Result<Self> {
         let file = File::open(path.as_ref())?;
-        let max_days = std::fs::metadata(path.as_ref())?.len();
+        let max_days = std::fs::metadata(path.as_ref())?.len() / (DAY_SIZE as u64);
 
         Ok(Self { file, max_days })
     }
@@ -58,8 +58,8 @@ impl DayLineBuilder {
 #[test]
 fn builder_test() -> anyhow::Result<()> {
     let builder = DayLineBuilder::from_path("../shlday/sh000001.day")?
-        .query_days(10);
+        .query_days(10000);
     let day_line = builder.build();
-    dbg!(day_line);
+    dbg!(day_line.data.len());
     Ok(())
 }
