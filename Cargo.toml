@@ -1,6 +1,6 @@
 [package]
 name = "tdx_dump_core"
-version = "0.2.0"
+version = "0.2.1"
 edition = "2021"
 authors = ["chanmaoganda <avaniawang@outlook.com>"]
 description = "A Rust library for parsing TDX files"
@@ -12,7 +12,7 @@ repository = "https://github.com/chanmaoganda/TdxDumpCore"
 anyhow = "1.0.89"
 byteorder = "1.5.0"
 # iter_tools = "0.21.0"
-# serde = { version = "^1.0", features = ["derive"] }
+serde = { version = "^1.0", features = ["derive"] }
 # ta = { version = "0.5.0", optional = true }
 
 [features]

@@ -1,6 +1,8 @@
+use serde::{Deserialize, Serialize};
+
 use crate::model::data::DailyData;
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct DayLine {
     data: Vec<DailyData>,
 }

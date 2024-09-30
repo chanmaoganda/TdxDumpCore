@@ -1,6 +1,5 @@
 use std::{fs::File, io::{Read, Seek, SeekFrom}, path::Path};
 
-use anyhow::Ok;
 use byteorder::ByteOrder;
 
 use crate::model::{data::DailyData, DayLine};
@@ -41,9 +40,7 @@ impl DayLineBuilder {
             let high = byteorder::LE::read_u32(&buffer[8..12]) as f32 / 100f32;
             let low = byteorder::LE::read_u32(&buffer[12..16]) as f32 / 100f32;
             let close = byteorder::LE::read_u32(&buffer[16..20]) as f32 / 100f32;
-            let turnover = byteorder::LE::read_f32(&buffer[20..24]);
-            let volume = byteorder::LE::read_u32(&buffer[24..28]) as f32 / 100f32;
-            let daily_data = DailyData::new(date, open, high, low, close, turnover, volume);
+            let daily_data = DailyData::new(date, open, high, low, close);
             day_line.push(daily_data);
         }
 
