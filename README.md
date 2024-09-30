@@ -14,5 +14,5 @@ tdx_dump_core = { version = "0.1", features = ["macd"] }
 
 ```rust
 let path = "/path/to/tdx/xxx.day";
-let daily = DayLine::new(path).with_macd();
+let daily = DayLine::new(path);
 ```

@@ -19,7 +19,7 @@ impl DayLine {
         assert!(bytes.len() % 32 == 0);
         let total_days = bytes.len() / 32;
         let mut raw_data = Vec::with_capacity(total_days);
-        let _ = (0..total_days).into_iter().for_each(|iteration| {
+        (0..total_days).for_each(|iteration| {
             let start_pos = iteration * 32;
             let end_pos = start_pos + 32;
 
@@ -38,7 +38,7 @@ impl DayLine {
         let mut daily_data = Vec::with_capacity(total_days);
         raw_data.into_iter().for_each(|daily| {
             let (diff, dea, raw_macd) = macd.next(daily.get_close_price()).into();
-            let macd = raw_macd * 2 as f64;
+            let macd = raw_macd * 2f64;
             daily_data.push(DailyData::new(daily, diff, dea, macd));
         });
         daily_data
