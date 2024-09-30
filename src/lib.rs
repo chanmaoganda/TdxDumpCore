@@ -1,5 +1,3 @@
-mod daily;
-mod day_line;
+mod model;
 
-pub use day_line::DayLine;
-pub use daily::DailyData;
+pub use model::*;
